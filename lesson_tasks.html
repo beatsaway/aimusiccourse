@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI音樂文學課程 - 教師課程計劃</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #0a0a0a;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533483 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Space travel star effect */
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(1px 1px at 5% 10%, #ffffff, transparent),
+                radial-gradient(2px 2px at 10% 25%, #ffffff, transparent),
+                radial-gradient(1px 1px at 15% 40%, #ffffff, transparent),
+                radial-gradient(3px 3px at 20% 15%, #ffffff, transparent),
+                radial-gradient(1px 1px at 25% 60%, #ffffff, transparent),
+                radial-gradient(2px 2px at 30% 35%, #ffffff, transparent),
+                radial-gradient(1px 1px at 35% 80%, #ffffff, transparent),
+                radial-gradient(2px 2px at 40% 45%, #ffffff, transparent),
+                radial-gradient(1px 1px at 45% 20%, #ffffff, transparent),
+                radial-gradient(3px 3px at 50% 70%, #ffffff, transparent),
+                radial-gradient(1px 1px at 55% 30%, #ffffff, transparent),
+                radial-gradient(2px 2px at 60% 85%, #ffffff, transparent),
+                radial-gradient(1px 1px at 65% 50%, #ffffff, transparent),
+                radial-gradient(1px 1px at 70% 25%, #ffffff, transparent),
+                radial-gradient(3px 3px at 75% 75%, #ffffff, transparent),
+                radial-gradient(1px 1px at 80% 40%, #ffffff, transparent),
+                radial-gradient(2px 2px at 85% 90%, #ffffff, transparent),
+                radial-gradient(1px 1px at 90% 15%, #ffffff, transparent),
+                radial-gradient(2px 2px at 95% 55%, #ffffff, transparent);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            animation: spaceTravel 8s linear infinite;
+            opacity: 0.9;
+        }
+        
+        @keyframes spaceTravel {
+            0% { 
+                transform: perspective(1000px) translateZ(0px) scale(1);
+                opacity: 0.9;
+            }
+            50% { 
+                transform: perspective(1000px) translateZ(500px) scale(1.5);
+                opacity: 0.6;
+            }
+            100% { 
+                transform: perspective(1000px) translateZ(1000px) scale(2);
+                opacity: 0.3;
+            }
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 10px;
+            font-weight: 800;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            color: #f0f0f0;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .course-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .info-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .info-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .info-card p {
+            font-size: 0.9rem;
+            color: #ffffff;
+            font-weight: 500;
+        }
+        
+        .lesson-card {
+            background: transparent;
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+        }
+        
+        .lesson-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .lesson-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .lesson-number {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        .lesson-title {
+            flex: 1;
+        }
+        
+        .lesson-title h2 {
+            color: #ffffff;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        .lesson-title p {
+            color: #f0f0f0;
+            font-size: 1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+        
+        .lesson-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .objectives, .requirements {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .objectives h3, .requirements h3 {
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        .objectives h3::before {
+            content: "🎯";
+            margin-right: 10px;
+        }
+        
+        .requirements h3::before {
+            content: "📋";
+            margin-right: 10px;
+        }
+        
+        .objectives ul, .requirements ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .objectives li, .requirements li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            color: #f0f0f0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+        
+        .objectives li::before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .requirements li::before {
+            content: "•";
+            color: #3498db;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .homework {
+            background: rgba(255, 234, 167, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            border: 2px solid rgba(255, 234, 167, 0.4);
+            backdrop-filter: blur(10px);
+        }
+        
+        .homework h3 {
+            color: #ffffff;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        .homework h3::before {
+            content: "📚";
+            margin-right: 10px;
+        }
+        
+        .homework p {
+            color: #f0f0f0;
+            font-weight: 500;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+        
+        .technical-notes {
+            background: rgba(52, 152, 219, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            border: 2px solid rgba(52, 152, 219, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .technical-notes h3 {
+            color: #ffffff;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        .technical-notes h3::before {
+            content: "⚙️";
+            margin-right: 10px;
+        }
+        
+        .technical-notes ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .technical-notes li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            color: #f0f0f0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+        
+        .technical-notes p {
+            color: #f0f0f0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+        
+        .technical-notes li::before {
+            content: "🔧";
+            position: absolute;
+            left: 0;
+        }
+        
+        .resources {
+            background: rgba(65, 105, 225, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            border: 2px solid rgba(65, 105, 225, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .resources h3 {
+            color: #ffffff;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        .resources h3::before {
+            content: "🔗";
+            margin-right: 10px;
+        }
+        
+        .resources a {
+            color: #87ceeb;
+            text-decoration: none;
+            font-weight: 500;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+        
+        .resources p {
+            color: #f0f0f0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+        
+        .resources a:hover {
+            text-decoration: underline;
+        }
+        
+        .assessment {
+            background: rgba(50, 205, 50, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            border: 2px solid rgba(50, 205, 50, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .assessment h3 {
+            color: #ffffff;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        .assessment h3::before {
+            content: "📊";
+            margin-right: 10px;
+        }
+        
+        .assessment ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .assessment li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            color: #f0f0f0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+        
+        .assessment li::before {
+            content: "📊";
+            position: absolute;
+            left: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .lesson-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .lesson-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .lesson-number {
+                margin-bottom: 15px;
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="course-info">
+                <div class="info-card">
+                    <h3>課程時長</h3>
+                    <p>8節課 × 1.5小時</p>
+                </div>
+                <div class="info-card">
+                    <h3>目標對象</h3>
+                    <p>中學生</p>
+                </div>
+                <div class="info-card">
+                    <h3>主要工具</h3>
+                    <p>Google Drive, Suno AI, GarageBand, OBS, Make It Pop, DaVinci Resolve</p>
+                </div>
+                <div class="info-card">
+                    <h3>最終作品</h3>
+                    <p>原創音樂MV</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lesson 1 -->
+        <div class="lesson-card">
+            <div class="lesson-header">
+                <div class="lesson-number">1</div>
+                <div class="lesson-title">
+                    <h2>歌詞創作與AI輔助</h2>
+                    <p>學習使用AI工具進行創意歌詞寫作</p>
+                </div>
+            </div>
+            <div class="lesson-content">
+                <div class="objectives">
+                    <h3>學習目標</h3>
+                    <ul>
+                        <li>建立Google Drive課程日誌</li>
+                        <li>學習使用Poe.com進行歌詞創作</li>
+                        <li>培養創意寫作和版本評估能力</li>
+                        <li>理解AI作為創作助手的角色</li>
+                    </ul>
+                </div>
+                <div class="requirements">
+                    <h3>課堂要求</h3>
+                    <ul>
+                        <li>學生Google帳戶</li>
+                        <li>電腦/平板設備</li>
+                        <li>網路連線</li>
+                        <li>創意思維準備</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="technical-notes">
+                <h3>技術操作步驟</h3>
+                <ul>
+                    <li>在Google Drive創建新資料夾：[學生姓名_MusicAI]</li>
+                    <li>建立Google Doc作為課程日誌</li>
+                    <li>登入poe.com並連結Google帳戶</li>
+                    <li>為每個主題創作至少5個版本歌詞</li>
+                    <li>每次創作後進行版本評估記錄</li>
+                </ul>
+            </div>
+            <div class="homework">
+                <h3>課後作業</h3>
+                <p>繼續創作更多版本歌詞，在Google Doc中記錄版本評估，並與老師分享</p>
+            </div>
+        </div>
+
+        <!-- Lesson 2 -->
+        <div class="lesson-card">
+            <div class="lesson-header">
+                <div class="lesson-number">2</div>
+                <div class="lesson-title">
+                    <h2>AI音樂生成與風格探索</h2>
+                    <p>使用Suno AI將歌詞轉化為完整歌曲</p>
+                </div>
+            </div>
+            <div class="lesson-content">
+                <div class="objectives">
+                    <h3>學習目標</h3>
+                    <ul>
+                        <li>學習使用Suno.com進行音樂生成</li>
+                        <li>理解不同音樂風格的特徵</li>
+                        <li>培養音樂品味和選擇能力</li>
+                        <li>學習音樂作品評估技巧</li>
+                    </ul>
+                </div>
+                <div class="requirements">
+                    <h3>課堂要求</h3>
+                    <ul>
+                        <li>已完成的歌詞作品</li>
+                        <li>Suno.com帳戶</li>
+                        <li>耳機或音響設備</li>
+                        <li>音樂風格參考資料</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="technical-notes">
+                <h3>技術操作步驟</h3>
+                <ul>
+                    <li>選擇最佳1-2個歌詞版本</li>
+                    <li>決定1-2種音樂風格</li>
+                    <li>登入suno.com並連結Google帳戶</li>
+                    <li>為每個版本創作至少4首歌曲</li>
+                    <li>記錄每首歌曲的Suno連結和版本評估</li>
+                </ul>
+            </div>
+            <div class="homework">
+                <h3>課後作業</h3>
+                <p>創作更多Suno歌曲版本，在Google Doc中記錄連結和版本評估</p>
+            </div>
+        </div>
+
+        <!-- Lesson 3 -->
+        <div class="lesson-card">
+            <div class="lesson-header">
+                <div class="lesson-number">3</div>
+                <div class="lesson-title">
+                    <h2>音樂改編與音軌分離</h2>
+                    <p>學習音樂分析和多軌道處理技術</p>
+                </div>
+            </div>
+            <div class="lesson-content">
+                <div class="objectives">
+                    <h3>學習目標</h3>
+                    <ul>
+                        <li>學習音樂改編和翻唱技術</li>
+                        <li>掌握音軌分離技術</li>
+                        <li>理解BPM分析</li>
+                        <li>學習多軌道音頻處理</li>
+                    </ul>
+                </div>
+                <div class="requirements">
+                    <h3>課堂要求</h3>
+                    <ul>
+                        <li>已完成的Suno歌曲</li>
+                        <li>音軌分離工具</li>
+                        <li>BPM檢測工具</li>
+                        <li>音樂分析工具</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="technical-notes">
+                <h3>技術操作步驟</h3>
+                <ul>
+                    <li>選擇最佳1-2首Suno歌曲</li>
+                    <li>分析樂器配置的喜好/不喜好並進行版本評估</li>
+                    <li>生成至少1個翻唱版本</li>
+                    <li>下載多軌道WAV格式音檔</li>
+                    <li>使用all8.com檢測BPM</li>
+                </ul>
+            </div>
+            <div class="resources">
+                <h3>所需工具</h3>
+                <p><a href="https://all8.com" target="_blank">all8.com</a> - BPM檢測工具</p>
+            </div>
+            <div class="homework">
+                <h3>課後作業</h3>
+                <p>創作更多Suno翻唱版本，記錄連結和版本評估</p>
+            </div>
+        </div>
+
+        <!-- Lesson 4 -->
+        <div class="lesson-card">
+            <div class="lesson-header">
+                <div class="lesson-number">4</div>
+                <div class="lesson-title">
+                    <h2>GarageBand基礎操作</h2>
+                    <p>學習專業DAW軟體的基本功能</p>
+                </div>
+            </div>
+            <div class="lesson-content">
+                <div class="objectives">
+                    <h3>學習目標</h3>
+                    <ul>
+                        <li>掌握GarageBand基本操作</li>
+                        <li>學習音軌編輯技術</li>
+                        <li>理解BPM設定和節拍器使用</li>
+                        <li>學習EQ濾波器應用</li>
+                    </ul>
+                </div>
+                <div class="requirements">
+                    <h3>課堂要求</h3>
+                    <ul>
+                        <li>Mac電腦或iPad</li>
+                        <li>GarageBand軟體</li>
+                        <li>範例音軌檔案</li>
+                        <li>耳機或音響設備</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="technical-notes">
+                <h3>技術操作步驟</h3>
+                <ul>
+                    <li>下載並匯入範例音軌到GarageBand</li>
+                    <li>降低鋼琴音軌音量</li>
+                    <li>為鋼琴音軌添加淡入效果</li>
+                    <li>設定專案BPM為88</li>
+                    <li>使用K鍵開啟節拍器</li>
+                    <li>使用<, >, Cmd+T, Cmd+M編輯鼓組音軌</li>
+                    <li>在master軌道應用低通EQ濾波器</li>
+                </ul>
+            </div>
+            <div class="homework">
+                <h3>課後作業（選修）</h3>
+                <p>將編輯技巧應用到自己的Suno歌曲上，錄製人聲替換AI人聲</p>
+            </div>
+        </div>
+
+        <!-- Lesson 5 -->
+        <div class="lesson-card">
+            <div class="lesson-header">
+                <div class="lesson-number">5</div>
+                <div class="lesson-title">
+                    <h2>GarageBand進階編輯技術</h2>
+                    <p>學習專業混音和音效處理技術</p>
+                </div>
+            </div>
+            <div class="lesson-content">
+                <div class="objectives">
+                    <h3>學習目標</h3>
+                    <ul>
+                        <li>學習Bus路由技術</li>
+                        <li>掌握Sidechain壓縮技術</li>
+                        <li>理解Reverb效果應用</li>
+                        <li>學習專業混音流程</li>
+                    </ul>
+                </div>
+                <div class="requirements">
+                    <h3>課堂要求</h3>
+                    <ul>
+                        <li>上節課的GarageBand專案</li>
+                        <li>進階音效處理知識</li>
+                        <li>混音概念理解</li>
+                        <li>錄音設備（如需要）</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="technical-notes">
+                <h3>技術操作步驟</h3>
+                <ul>
+                    <li>將鼓組音軌重新路由到Bus1</li>
+                    <li>在鋼琴和人聲音軌添加壓縮器</li>
+                    <li>使用Bus1作為Sidechain</li>
+                    <li>將鋼琴音軌20%發送到Bus2</li>
+                    <li>將人聲音軌50%發送到Bus2</li>
+                    <li>在Bus2添加Reverb效果</li>
+                    <li>替換人聲音軌（如有錄製）</li>
+                </ul>
+            </div>
+            <div class="homework">
+                <h3>課後作業（選修）</h3>
+                <p>將進階編輯技巧應用到自己的Suno歌曲上，錄製人聲替換AI人聲</p>
+            </div>
+        </div>
+
+        <!-- Lesson 6 -->
+        <div class="lesson-card">
+            <div class="lesson-header">
+                <div class="lesson-number">6</div>
+                <div class="lesson-title">
+                    <h2>程式化音樂與AI工具開發</h2>
+                    <p>學習使用AI工具創建互動音樂動畫</p>
+                </div>
+            </div>
+            <div class="lesson-content">
+                <div class="objectives">
+                    <h3>學習目標</h3>
+                    <ul>
+                        <li>了解程式化音樂概念</li>
+                        <li>學習AI工具開發基礎</li>
+                        <li>掌握歌詞動畫製作</li>
+                        <li>學習OBS錄影技術</li>
+                    </ul>
+                </div>
+                <div class="requirements">
+                    <h3>課堂要求</h3>
+                    <ul>
+                        <li>已完成的歌曲歌詞</li>
+                        <li>OBS Studio軟體</li>
+                        <li>網路連線</li>
+                        <li>螢幕錄影設備</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="technical-notes">
+                <h3>技術操作步驟</h3>
+                <ul>
+                    <li>學習程式化音樂概念</li>
+                    <li>複製歌詞到makeitpop.netlify.app</li>
+                    <li>自訂動畫風格設定</li>
+                    <li>使用OBS錄製歌詞動畫</li>
+                    <li>上傳錄影到Google Drive</li>
+                </ul>
+            </div>
+            <div class="resources">
+                <h3>所需工具</h3>
+                <p><a href="https://makeitpop.netlify.app/" target="_blank">makeitpop.netlify.app</a> - 歌詞動畫製作工具</p>
+                <p><a href="https://obsproject.com/" target="_blank">OBS Studio</a> - 螢幕錄影軟體</p>
+            </div>
+            <div class="homework">
+                <h3>課後作業</h3>
+                <p>繼續製作歌詞動畫，準備約60張圖片用於下節課製作音樂影片</p>
+            </div>
+        </div>
+
+        <!-- Lesson 7 -->
+        <div class="lesson-card">
+            <div class="lesson-header">
+                <div class="lesson-number">7</div>
+                <div class="lesson-title">
+                    <h2>音樂影片製作基礎</h2>
+                    <p>使用DaVinci Resolve進行影片編輯</p>
+                </div>
+            </div>
+            <div class="lesson-content">
+                <div class="objectives">
+                    <h3>學習目標</h3>
+                    <ul>
+                        <li>學習DaVinci Resolve基本操作</li>
+                        <li>掌握音畫同步技術</li>
+                        <li>學習影片剪輯和調整</li>
+                        <li>理解影片製作流程</li>
+                    </ul>
+                </div>
+                <div class="requirements">
+                    <h3>課堂要求</h3>
+                    <ul>
+                        <li>DaVinci Resolve軟體</li>
+                        <li>完成的歌曲WAV檔案</li>
+                        <li>歌詞動畫檔案</li>
+                        <li>準備的圖片素材</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="technical-notes">
+                <h3>技術操作步驟</h3>
+                <ul>
+                    <li>匯入歌曲WAV檔案到DaVinci Resolve</li>
+                    <li>匯入歌詞動畫和圖片素材</li>
+                    <li>剪輯和調整歌詞動畫位置</li>
+                    <li>與音樂同步調整素材位置</li>
+                    <li>裁剪、重新定位和調整透明度</li>
+                </ul>
+            </div>
+            <div class="resources">
+                <h3>所需工具</h3>
+                <p>DaVinci Resolve - 專業影片編輯軟體（免費版）</p>
+            </div>
+        </div>
+
+        <!-- Lesson 8 -->
+        <div class="lesson-card">
+            <div class="lesson-header">
+                <div class="lesson-number">8</div>
+                <div class="lesson-title">
+                    <h2>作品完成與展示</h2>
+                    <p>完成音樂影片製作並進行作品分享</p>
+                </div>
+            </div>
+            <div class="lesson-content">
+                <div class="objectives">
+                    <h3>學習目標</h3>
+                    <ul>
+                        <li>完成音樂影片製作</li>
+                        <li>學習影片輸出技術</li>
+                        <li>培養作品展示能力</li>
+                        <li>學習專業作品點評</li>
+                    </ul>
+                </div>
+                <div class="requirements">
+                    <h3>課堂要求</h3>
+                    <ul>
+                        <li>上節課的DaVinci Resolve專案</li>
+                        <li>完整的影片素材</li>
+                        <li>作品展示準備</li>
+                        <li>點評表格</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="technical-notes">
+                <h3>技術操作步驟</h3>
+                <ul>
+                    <li>繼續DaVinci Resolve影片編輯</li>
+                    <li>以H.265格式render影片</li>
+                    <li>上傳完成作品到Google Drive</li>
+                    <li>準備作品展示</li>
+                </ul>
+            </div>
+            <div class="assessment">
+                <h3>評估方式</h3>
+                <ul>
+                    <li>學生作品展示和分享</li>
+                    <li>同儕互評和專業點評</li>
+                    <li>創作過程版本評估記錄</li>
+                    <li>技術技能應用評估</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Additional Resources -->
+        <div class="lesson-card">
+            <div class="lesson-header">
+                <div class="lesson-number">📚</div>
+                <div class="lesson-title">
+                    <h2>課程資源與支援</h2>
+                    <p>教師教學支援和學生學習資源</p>
+                </div>
+            </div>
+            <div class="resources">
+                <h3>線上工具資源</h3>
+                <ul>
+                    <li><a href="https://poe.com" target="_blank">Poe.com</a> - AI歌詞創作工具</li>
+                    <li><a href="https://suno.com" target="_blank">Suno.com</a> - AI音樂生成平台 (付費版本僅第3課需要)</li>
+                    <li><a href="https://all8.com" target="_blank">all8.com</a> - BPM檢測</li>
+                    <li><a href="https://makeitpop.netlify.app/" target="_blank">makeitpop.netlify.app</a> - 歌詞動畫製作</li>
+                </ul>
+            </div>
+            <div class="technical-notes">
+                <h3>軟體需求</h3>
+                <ul>
+                    <li>GarageBand (Mac/iPad)</li>
+                    <li>DaVinci Resolve (免費版)</li>
+                    <li>OBS Studio (免費螢幕錄影)</li>
+                    <li>Google Drive (雲端儲存)</li>
+                </ul>
+            </div>
+            <div class="assessment">
+                <h3>課程評估標準</h3>
+                <ul>
+                    <li>創意表達能力 (25%)</li>
+                    <li>技術技能掌握 (25%)</li>
+                    <li>作品完成度 (25%)</li>
+                    <li>反思和學習態度 (25%)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
