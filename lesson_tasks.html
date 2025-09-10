@@ -362,6 +362,11 @@
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
         }
         
+        .resources li {
+            color: #f0f0f0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+        
         .resources a:hover {
             text-decoration: underline;
         }
@@ -407,6 +412,47 @@
             left: 0;
         }
         
+        .key-concepts {
+            background: rgba(255, 165, 0, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            border: 2px solid rgba(255, 165, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .key-concepts h3 {
+            color: #ffffff;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+        
+        .key-concepts h3::before {
+            content: "💡";
+            margin-right: 10px;
+        }
+        
+        .key-concepts ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .key-concepts li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            color: #f0f0f0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+        
+        .key-concepts li::before {
+            content: "💡";
+            position: absolute;
+            left: 0;
+        }
+        
         @media (max-width: 768px) {
             .lesson-content {
                 grid-template-columns: 1fr;
@@ -430,26 +476,6 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <div class="course-info">
-                <div class="info-card">
-                    <h3>課程時長</h3>
-                    <p>8節課 × 1.5小時</p>
-                </div>
-                <div class="info-card">
-                    <h3>目標對象</h3>
-                    <p>中學生</p>
-                </div>
-                <div class="info-card">
-                    <h3>主要工具</h3>
-                    <p>Google Drive, Suno AI, GarageBand, OBS, Make It Pop, DaVinci Resolve</p>
-                </div>
-                <div class="info-card">
-                    <h3>最終作品</h3>
-                    <p>原創音樂MV</p>
-                </div>
-            </div>
-        </div>
 
         <!-- Lesson 1 -->
         <div class="lesson-card">
@@ -493,6 +519,15 @@
             <div class="homework">
                 <h3>課後作業</h3>
                 <p>繼續創作更多版本歌詞，在Google Doc中記錄版本評估，並與老師分享</p>
+            </div>
+            <div class="key-concepts">
+                <h3>重點知識/概念</h3>
+                <ul>
+                    <li><strong>歌曲結構</strong> - Verse（主歌）、Chorus（副歌）、Bridge（橋段）、Intro/Outro（前奏/尾奏）</li>
+                    <li><strong>歌詞創作技巧</strong> - 押韻模式、節奏感、情感表達、故事性敘述</li>
+                    <li><strong>創作方法</strong> - 自由聯想、情感映射、個人經歷轉化、文學作品改編</li>
+                    <li><strong>AI輔助創作</strong> - 提示詞工程、迭代優化、創意激發與篩選</li>
+                </ul>
             </div>
         </div>
 
@@ -538,6 +573,18 @@
             <div class="homework">
                 <h3>課後作業</h3>
                 <p>創作更多Suno歌曲版本，在Google Doc中記錄連結和版本評估</p>
+            </div>
+            <div class="key-concepts">
+                <h3>重點知識/概念</h3>
+                <ul>
+                    <li><strong>歌曲結構執行</strong> - Verse（主歌）、Chorus（副歌）、Bridge（橋段）的音樂編排</li>
+                    <li><strong>轉場技巧</strong> - 段落間的過渡、情緒轉換、動態變化</li>
+                    <li><strong>音樂風格識別</strong> - Pop、Rock、Hip-Hop、Electronic、Jazz、Classical等風格特徵</li>
+                    <li><strong>音樂元素</strong> - BPM（節拍）、Key（調性）、Tempo（速度）、Mood（情緒）</li>
+                    <li><strong>樂器配置</strong> - 主奏樂器、節奏樂器、和聲樂器、打擊樂器組合</li>
+                    <li><strong>人聲特質</strong> - Vocal Tone（人聲音色）、Pitch（音高）、Style（演唱風格）</li>
+                    <li><strong>AI提示技巧</strong> - 具體描述、風格組合、情緒表達、技術參數設定</li>
+                </ul>
             </div>
         </div>
 
@@ -588,6 +635,17 @@
                 <h3>課後作業</h3>
                 <p>創作更多Suno翻唱版本，記錄連結和版本評估</p>
             </div>
+            <div class="key-concepts">
+                <h3>重點知識/概念</h3>
+                <ul>
+                    <li><strong>音樂分析</strong> - BPM檢測、調性識別、和弦進行分析</li>
+                    <li><strong>混音概念</strong> - 頻率平衡、動態處理、立體聲場、音量層次</li>
+                    <li><strong>聲音設計概念</strong> - 音色塑造、空間感營造、音頻質感控制</li>
+                    <li><strong>音樂改編概念</strong> - 風格轉換、編曲重新詮釋、創意翻唱</li>
+                    <li><strong>多軌道處理</strong> - Stem分離、獨立音軌編輯、混音準備</li>
+                    <li><strong>版權意識</strong> - AI生成內容的版權水印識別與處理</li>
+                </ul>
+            </div>
         </div>
 
         <!-- Lesson 4 -->
@@ -635,6 +693,16 @@
                 <h3>課後作業（選修）</h3>
                 <p>將編輯技巧應用到自己的Suno歌曲上，錄製人聲替換AI人聲</p>
             </div>
+            <div class="key-concepts">
+                <h3>重點知識/概念</h3>
+                <ul>
+                    <li><strong>DAW基礎概念</strong> - Digital Audio Workstation、音軌、時間軸、BPM設定</li>
+                    <li><strong>音頻編輯技術</strong> - 剪切、複製、移動、淡入淡出效果</li>
+                    <li><strong>音量控制</strong> - 音軌音量平衡、動態範圍控制</li>
+                    <li><strong>EQ濾波器</strong> - 頻率調整、低通/高通濾波、AI水印去除</li>
+                    <li><strong>節拍器使用</strong> - 節拍同步、錄音準備、時間對齊</li>
+                </ul>
+            </div>
         </div>
 
         <!-- Lesson 5 -->
@@ -681,6 +749,16 @@
             <div class="homework">
                 <h3>課後作業（選修）</h3>
                 <p>將進階編輯技巧應用到自己的Suno歌曲上，錄製人聲替換AI人聲</p>
+            </div>
+            <div class="key-concepts">
+                <h3>重點知識/概念</h3>
+                <ul>
+                    <li><strong>Bus路由系統</strong> - 音軌分組、效果鏈處理、信號路由</li>
+                    <li><strong>Sidechain壓縮</strong> - 動態控制、節拍同步、音頻空間感</li>
+                    <li><strong>Reverb效果</strong> - 空間感營造、深度層次、音頻環境模擬</li>
+                    <li><strong>專業混音概念</strong> - 頻率平衡、動態處理、立體聲場</li>
+                    <li><strong>音頻處理鏈</strong> - 效果器順序、信號流、音質優化</li>
+                </ul>
             </div>
         </div>
 
@@ -732,6 +810,16 @@
                 <h3>課後作業</h3>
                 <p>繼續製作歌詞動畫，準備約60張圖片用於下節課製作音樂影片</p>
             </div>
+            <div class="key-concepts">
+                <h3>重點知識/概念</h3>
+                <ul>
+                    <li><strong>程式化音樂</strong> - Algorithmic Composition、Generative Music、參數化創作</li>
+                    <li><strong>AI工具開發</strong> - 提示詞工程、參數調優、創意自動化</li>
+                    <li><strong>動畫製作概念</strong> - 時間軸同步、視覺節奏、動態設計</li>
+                    <li><strong>螢幕錄影技術</strong> - 品質設定、音畫同步、檔案格式選擇</li>
+                    <li><strong>創意編程思維</strong> - 邏輯化創意、系統化設計、迭代優化</li>
+                </ul>
+            </div>
         </div>
 
         <!-- Lesson 7 -->
@@ -776,6 +864,16 @@
             <div class="resources">
                 <h3>所需工具</h3>
                 <p>DaVinci Resolve - 專業影片編輯軟體（免費版）</p>
+            </div>
+            <div class="key-concepts">
+                <h3>重點知識/概念</h3>
+                <ul>
+                    <li><strong>影片編輯基礎</strong> - Timeline、音畫同步、剪輯技巧、轉場效果</li>
+                    <li><strong>視覺敘事</strong> - 故事結構、節奏控制、情感表達</li>
+                    <li><strong>音畫關係</strong> - 音樂與視覺的配合、情緒同步、節拍對應</li>
+                    <li><strong>素材管理</strong> - 檔案組織、格式轉換、品質控制</li>
+                    <li><strong>創意剪輯</strong> - 蒙太奇技巧、視覺效果、創意表達</li>
+                </ul>
             </div>
         </div>
 
@@ -824,6 +922,16 @@
                     <li>同儕互評和專業點評</li>
                     <li>創作過程版本評估記錄</li>
                     <li>技術技能應用評估</li>
+                </ul>
+            </div>
+            <div class="key-concepts">
+                <h3>重點知識/概念</h3>
+                <ul>
+                    <li><strong>作品完成度</strong> - 技術執行、創意表達、整體品質</li>
+                    <li><strong>專業評估標準</strong> - 音樂品質、視覺效果、創意原創性</li>
+                    <li><strong>同儕學習</strong> - 作品互評、創意交流、技術分享</li>
+                    <li><strong>自我反思</strong> - 創作過程回顧、技能成長評估</li>
+                    <li><strong>未來發展</strong> - AI音樂創作趨勢、持續學習方向</li>
                 </ul>
             </div>
         </div>
